@@ -20,7 +20,7 @@ def hello(request):
 
 def contact(request):
 	if request.method != 'POST':
-		form = ContactForm()
+		form = ContactForm(initial={'subject':'I love your site!'})
 	else:
 		form = ContactForm(request.POST)
 		if form.is_valid():
